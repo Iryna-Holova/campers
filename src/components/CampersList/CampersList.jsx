@@ -10,6 +10,7 @@ const CampersList = ({
 }) => {
   return (
     <div className={css.wrapper}>
+      <h2 className="visually-hidden">Campers</h2>
       <ul className={css.list}>
         {campers.map(camper => (
           <CampersCard key={camper._id} camper={camper} />

@@ -2,13 +2,14 @@ import ButtonLink from 'components/ButtonLink/ButtonLink';
 import icons from './CampersCard.module.css';
 import css from './CampersCard.module.css';
 import CampersImage from './CampersImage/CampersImage';
+import { formatPrice } from 'helpers/format-data';
 // import { addFavorite, removeFavorite } from 'store/favorites/slice';
 
 const CampersCard = ({ camper }) => {
   const {
     // _id,
-    // name,
-    // price,
+    name,
+    price,
     // rating,
     // location,
     // adults,
@@ -31,8 +32,8 @@ const CampersCard = ({ camper }) => {
       <div className={css.details}>
         <div className={css.header}>
           <div className={css.title}>
-            {/* <CardTitle>{name}</CardTitle> */}
-            {/* <CamperPrice price={price} /> */}
+            <h3 className="card-title">{name}</h3>
+            <p className="card-title">{formatPrice(price)}</p>
             <button
               type="button"
               // onClick={() =>
