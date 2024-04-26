@@ -1,13 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectModals } from 'store/selectors';
 import { closeModal } from 'store/modal/modal';
-import { MODALS } from 'constants/static';
+import { CAMPER_MODAL_TABS, MODALS } from 'constants/static';
 import icons from '../../images/sprite.svg';
 import css from './CampersModal.module.css';
 import CamperStats from 'components/CampersCommon/CamperStats/CamperStats';
 import { useEffect, useRef, useState } from 'react';
 import { formatPrice } from 'helpers/format-data';
 import CampersFeatures from 'components/CampersCommon/CampersFeatures/CampersFeatures';
+import Tabs from './Tabs/Tabs';
+import CampersDetails from './CampersDetails/CampersDetails';
 
 const CampersModal = () => {
   const dispatch = useDispatch();
@@ -48,12 +50,12 @@ const CampersModal = () => {
     adults,
     engine,
     transmission,
-    // form,
-    // length,
-    // width,
-    // height,
-    // tank,
-    // consumption,
+    form,
+    length,
+    width,
+    height,
+    tank,
+    consumption,
     description,
     AC,
     kitchen,
@@ -108,12 +110,12 @@ const CampersModal = () => {
           <div ref={scrollContainerRef} className={css.scroll}>
             {/* <CamperImages images={gallery} /> */}
             <p className={css.description}>{description}</p>
-            {/* <Tabs
-            tabs={TABS}
-            tabsRef={tabsRef}
-            activeIdx={activeTab}
-            onTabClick={setActiveTab}
-          /> */}
+            <Tabs
+              tabs={CAMPER_MODAL_TABS}
+              tabsRef={tabsRef}
+              activeIdx={activeTab}
+              onTabClick={setActiveTab}
+            />
             <div className={css.bottom}>
               <div ref={tabsContainerRef} className={css.optional}>
                 <div
@@ -142,9 +144,9 @@ const CampersModal = () => {
                       water,
                     }}
                   />
-                  {/* <CamperDetails
+                  <CampersDetails
                     details={{ form, length, width, height, tank, consumption }}
-                  /> */}
+                  />
                 </div>
                 {/* <CamperReviews
                   activeRef={activeTab === 1 ? activeElementRef : null}
