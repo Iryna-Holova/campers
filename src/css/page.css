@@ -30,9 +30,9 @@ body {
   height: 100%;
   margin: 0;
   font-family: 'Inter', sans-serif;
-  color: var(--color-text);
   line-height: 1.5;
   letter-spacing: -0.02em;
+  color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -1,0 +1,14 @@
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-overlay);
+  transition: background-color var(--transition);
+}
+
+.overlay.hidden {
+  background-color: transparent;
+  transform: scale(0);
+}

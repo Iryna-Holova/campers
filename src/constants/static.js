@@ -16,3 +16,8 @@ export const SOCIAL_LINKS = [
   { link: 'https://www.facebook.com/', icon: '#icon-facebook' },
   { link: 'https://www.youtube.com/', icon: '#icon-youtube' },
 ];
+
+export const MODALS = {
+  menu: 'MobileMenu',
+  camper: 'CamperModal',
+};

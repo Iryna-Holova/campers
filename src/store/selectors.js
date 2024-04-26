@@ -27,3 +27,8 @@ export const selectCampersShown = createSelector(
     }));
   }
 );
+
+export const selectModalsStack = state => state.modal.stack;
+export const selectIsOverlay = createSelector(selectModalsStack, stack => {
+  return stack.length > 0;
+});

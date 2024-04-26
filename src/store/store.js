@@ -13,6 +13,7 @@ import {
 import { campersReducer } from './campers/slice';
 import { filterReducer } from './filter/slice';
 import { favoritesReducer } from './favorites/slice';
+import { modalReducer } from './modal/modal';
 
 const filterPersistConfig = {
   key: 'filter',
@@ -29,6 +30,7 @@ export const store = configureStore({
     campers: campersReducer,
     filter: persistReducer(filterPersistConfig, filterReducer),
     favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
+    modal: modalReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

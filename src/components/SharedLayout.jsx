@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header/Header';
 import Loader from './Loader/Loader';
+import Overlay from './Overlay/Overlay';
 import Footer from './Footer/Footer';
 
 const SharedLayout = () => {
@@ -14,7 +15,7 @@ const SharedLayout = () => {
           <Outlet />
         </Suspense>
       </main>
-      <Footer />
+      <Footer /> <Overlay />
     </Suspense>
   );
 };

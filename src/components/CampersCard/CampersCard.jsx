@@ -1,12 +1,14 @@
 import { useDispatch } from 'react-redux';
 import { addFavorite, removeFavorite } from 'store/favorites/slice';
 import { formatPrice } from 'helpers/format-data';
+import { openModal } from 'store/modal/modal';
+import { MODALS } from 'constants/static';
 import CampersImage from './CampersImage/CampersImage';
 import CamperStats from 'components/CampersCommon/CamperStats/CamperStats';
+import CampersFeatures from 'components/CampersCommon/CampersFeatures/CampersFeatures';
 import ButtonLink from 'components/ButtonLink/ButtonLink';
 import icons from '../../images/sprite.svg';
 import css from './CampersCard.module.css';
-import CampersFeatures from 'components/CampersCommon/CampersFeatures/CampersFeatures';
 
 const CampersCard = ({ camper, isFavorites = false }) => {
   const dispatch = useDispatch();
@@ -70,7 +72,11 @@ const CampersCard = ({ camper, isFavorites = false }) => {
             rating={rating}
             reviews={reviews.length}
             location={location}
-            // onOpenReviews={handleRatingClick}
+            onOpenReviews={() =>
+              dispatch(
+                openModal({ name: MODALS.camper, data: camper, activeTab: 1 })
+              )
+            }
           />
         </div>
         <p className={css.description}>{description}</p>
@@ -88,17 +94,16 @@ const CampersCard = ({ camper, isFavorites = false }) => {
         />
         <ButtonLink
           type="button"
-          // onClick={() => setShowModal(true)}
+          onClick={() =>
+            dispatch(
+              openModal({ name: MODALS.camper, data: camper, activeTab: 0 })
+            )
+          }
           size="small"
         >
           Show more
         </ButtonLink>
       </div>
-      {/* {showModal && (
-        <Modal onClose={handleModalClose}>
-          <CamperModal {...camper} modalTab={modalTab} />
-        </Modal>
-      )} */}
     </li>
   );
 };
