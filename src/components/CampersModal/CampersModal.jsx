@@ -10,6 +10,7 @@ import { formatPrice } from 'helpers/format-data';
 import CampersFeatures from 'components/CampersCommon/CampersFeatures/CampersFeatures';
 import Tabs from './Tabs/Tabs';
 import CampersDetails from './CampersDetails/CampersDetails';
+import CampersReviews from './CampersReviews/CampersReviews';
 
 const CampersModal = () => {
   const dispatch = useDispatch();
@@ -148,11 +149,11 @@ const CampersModal = () => {
                     details={{ form, length, width, height, tank, consumption }}
                   />
                 </div>
-                {/* <CamperReviews
+                <CampersReviews
                   activeRef={activeTab === 1 ? activeElementRef : null}
                   isShown={activeTab === 1}
                   reviews={reviews}
-                /> */}
+                />
               </div>
               {/* <CamperForm id={_id} /> */}
             </div>
