@@ -26,6 +26,6 @@
   }
 }
 
-.wrapper button {
+.wrapper > button {
   align-self: center;
 }
