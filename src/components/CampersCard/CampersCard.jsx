@@ -1,6 +1,7 @@
 import ButtonLink from 'components/ButtonLink/ButtonLink';
 import icons from './CampersCard.module.css';
 import css from './CampersCard.module.css';
+import CampersImage from './CampersImage/CampersImage';
 // import { addFavorite, removeFavorite } from 'store/favorites/slice';
 
 const CampersCard = ({ camper }) => {
@@ -19,14 +20,14 @@ const CampersCard = ({ camper }) => {
     // kitchen,
     // beds,
     // TV,
-    // gallery,
+    gallery,
     // reviews,
     isFavorite = false,
   } = camper;
 
   return (
     <li className={css.card}>
-      {/* <CamperImage images={gallery} /> */}
+      <CampersImage images={gallery} />
       <div className={css.details}>
         <div className={css.header}>
           <div className={css.title}>
