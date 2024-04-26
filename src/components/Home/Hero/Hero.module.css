@@ -2,6 +2,7 @@
   margin-top: 16px;
   border-radius: 16px;
   animation: image 30s infinite;
+  background-color: var(--color-main-60);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -18,8 +18,5 @@
   --color-overlay: rgba(17, 18, 19, 0.4);
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --animation-fade-in: fade 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --animation-fade-out: fade 210ms reverse linear;
-  --animation-modal-in: modal-in 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --animation-modal-out: modal-out 250ms linear;
   --animation-pulse: pulse 2s infinite;
 }

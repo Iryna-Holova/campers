@@ -47,6 +47,6 @@
   }
 }
 
-.item a {
+.item > button {
   align-self: center;
 }
