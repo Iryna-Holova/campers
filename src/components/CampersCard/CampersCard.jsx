@@ -6,6 +6,7 @@ import CamperStats from 'components/CampersCommon/CamperStats/CamperStats';
 import ButtonLink from 'components/ButtonLink/ButtonLink';
 import icons from '../../images/sprite.svg';
 import css from './CampersCard.module.css';
+import CampersFeatures from 'components/CampersCommon/CampersFeatures/CampersFeatures';
 
 const CampersCard = ({ camper, isFavorites = false }) => {
   const dispatch = useDispatch();
@@ -16,15 +17,15 @@ const CampersCard = ({ camper, isFavorites = false }) => {
     price,
     rating,
     location,
-    // adults,
-    // engine,
-    // transmission,
+    adults,
+    engine,
+    transmission,
     description,
-    // AC,
-    // bathroom,
-    // kitchen,
-    // beds,
-    // TV,
+    AC,
+    bathroom,
+    kitchen,
+    beds,
+    TV,
     gallery,
     reviews,
     isFavorite = false,
@@ -73,7 +74,7 @@ const CampersCard = ({ camper, isFavorites = false }) => {
           />
         </div>
         <p className={css.description}>{description}</p>
-        {/* <CamperFeatures
+        <CampersFeatures
           features={{
             adults,
             transmission,
@@ -84,7 +85,7 @@ const CampersCard = ({ camper, isFavorites = false }) => {
             TV,
             'Shower/WC': bathroom,
           }}
-        /> */}
+        />
         <ButtonLink
           type="button"
           // onClick={() => setShowModal(true)}
