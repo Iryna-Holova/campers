@@ -11,6 +11,7 @@ import {
   selectIsLoading,
   selectPage,
 } from 'store/selectors';
+import { scrollToTop } from 'helpers/scrolls';
 import { CATALOG_LIMIT, TOTAL_CAMPERS } from 'constants/campers';
 import CampersList from 'components/CampersList/CampersList';
 import Filter from 'components/Filter/Filter';
@@ -26,6 +27,10 @@ const CatalogPage = () => {
   const isFilterActive = useSelector(selectIsFilterActive);
   const filterValues = useSelector(selectFilterValues);
   // const error = useSelector(selectError);
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   useEffect(() => {
     if (isLoaded) return;

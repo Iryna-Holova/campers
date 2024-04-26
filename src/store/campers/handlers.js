@@ -7,6 +7,7 @@ export const handlePending = (state, { meta }) => {
   state.error = null;
   state.isLoading = true;
   state.isLoadMore = false;
+  state.isLoaded = true;
 };
 
 export const handleRejected = (state, { error }) => {
@@ -17,7 +18,6 @@ export const handleRejected = (state, { error }) => {
 export const handleFulfilled = (state, { meta, payload }) => {
   const { limit } = meta.arg;
   state.isLoading = false;
-  state.isLoaded = true;
   state.items = state.items.concat(payload);
   state.isLoadMore =
     limit < TOTAL_CAMPERS
