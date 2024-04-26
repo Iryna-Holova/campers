@@ -1,11 +1,12 @@
 import CampersCard from 'components/CampersCard/CampersCard';
 import ButtonLink from 'components/ButtonLink/ButtonLink';
+import CampersSkeleton from 'components/CampersCard/CampersSkeleton/CampersSkeleton';
 import css from './CampersList.module.css';
 
 const CampersList = ({
   campers,
   isFavorites,
-  // isLoading = false,
+  isLoading = false,
   isLoadMore = false,
   onLoadMore = () => {},
 }) => {
@@ -20,20 +21,20 @@ const CampersList = ({
             isFavorites={isFavorites}
           />
         ))}
-        {/* {isLoading && (
+        {isLoading && (
           <>
-            <CamperSkeleton />
-            <CamperSkeleton />
-            <CamperSkeleton />
-            <CamperSkeleton />
+            <CampersSkeleton />
+            <CampersSkeleton />
+            <CampersSkeleton />
+            <CampersSkeleton />
           </>
-        )} */}
+        )}
       </ul>
       {isLoadMore && (
         <ButtonLink
           type="button"
           onClick={onLoadMore}
-          // disabled={isLoading}
+          disabled={isLoading}
           size="smaller"
           color="secondary"
         >
