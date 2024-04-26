@@ -1,4 +1,4 @@
-[Campers Rental Ukraine](#campers-rental-ukraine)
+# [Campers Rental Ukraine](#campers-rental-ukraine)
 
 This application allows users to browse and rent campers available for rental in
 Ukraine. It consists of three main pages:
