@@ -36,6 +36,21 @@
   }
 }
 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 44px;
+  margin-top: 16px;
+}
+
+@media screen and (min-width: 1440px) {
+  .page-container {
+    flex-direction: row;
+    column-gap: 64px;
+    margin-top: 24px;
+  }
+}
+
 .visually-hidden {
   visibility: hidden;
   display: none;
