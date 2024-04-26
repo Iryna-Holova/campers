@@ -11,12 +11,14 @@
   padding: 16px 4px 16px 16px;
   border-radius: 20px;
   background-color: var(--color-white);
-  transition: transform var(--transition), visibility var(--transition);
+  transition: transform var(--transition), visibility var(--transition),
+    opacity var(--transition);
 }
 
 .modal.hidden {
+  opacity: 0;
   visibility: hidden;
-  transform: translate(-50%, 100%);
+  transform: translate(-50%, 200%);
 }
 
 .modal div::-webkit-scrollbar {

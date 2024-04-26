@@ -1,17 +1,18 @@
+import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectModals } from 'store/selectors';
 import { closeModal } from 'store/modal/modal';
 import { CAMPER_MODAL_TABS, MODALS } from 'constants/static';
-import icons from '../../images/sprite.svg';
-import css from './CampersModal.module.css';
-import CamperStats from 'components/CampersCommon/CamperStats/CamperStats';
-import { useEffect, useRef, useState } from 'react';
 import { formatPrice } from 'helpers/format-data';
-import CampersFeatures from 'components/CampersCommon/CampersFeatures/CampersFeatures';
+import icons from '../../images/sprite.svg';
+import CamperStats from 'components/CampersCommon/CamperStats/CamperStats';
+import CampersImages from './CampersImages/CampersImages';
 import Tabs from './Tabs/Tabs';
+import CampersFeatures from 'components/CampersCommon/CampersFeatures/CampersFeatures';
 import CampersDetails from './CampersDetails/CampersDetails';
 import CampersReviews from './CampersReviews/CampersReviews';
-import CampersImages from './CampersImages/CampersImages';
+import CampersForm from './CampersForm/CampersForm';
+import css from './CampersModal.module.css';
 
 const CampersModal = () => {
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ const CampersModal = () => {
 
   const {
     modalTab = 0,
-    // _id,
+    _id,
     name,
     price,
     rating,
@@ -75,7 +76,7 @@ const CampersModal = () => {
     gallery,
     reviews,
   } = isModal[MODALS.camper]?.data ?? {};
-  console.log(name);
+
   useEffect(() => {
     setActiveTab(modalTab);
     if (modalTab) setScroll(true);
@@ -156,7 +157,7 @@ const CampersModal = () => {
                   reviews={reviews}
                 />
               </div>
-              {/* <CamperForm id={_id} /> */}
+              <CampersForm id={_id} />
             </div>
           </div>
         </div>
