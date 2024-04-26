@@ -1,13 +1,22 @@
 {
   "files": {
-    "main.css": "/campers/static/css/main.7acaea2f.css",
+    "main.css": "/campers/static/css/main.10d556f5.css",
     "main.js": "/campers/static/js/main.07d3183d.js",
+    "static/media/Inter-SemiBold.woff": "/campers/static/media/Inter-SemiBold.7712d4d442e44e4332ef.woff",
+    "static/media/Inter-Medium.woff": "/campers/static/media/Inter-Medium.418f8be8a3c993c4d775.woff",
+    "static/media/Inter-Regular.woff": "/campers/static/media/Inter-Regular.2530f400cd1c294e4d04.woff",
+    "static/media/Inter-SemiBold.eot": "/campers/static/media/Inter-SemiBold.91eb2824847d2436ee82.eot",
+    "static/media/Inter-Medium.eot": "/campers/static/media/Inter-Medium.9753cad11d4c4994620d.eot",
+    "static/media/Inter-Regular.eot": "/campers/static/media/Inter-Regular.70949e48fc2790f856d2.eot",
+    "static/media/Inter-SemiBold.woff2": "/campers/static/media/Inter-SemiBold.85d4157f9b21f8077306.woff2",
+    "static/media/Inter-Medium.woff2": "/campers/static/media/Inter-Medium.4e12ebcb864c3a7e9201.woff2",
+    "static/media/Inter-Regular.woff2": "/campers/static/media/Inter-Regular.5036dafe7fa5fc29fb93.woff2",
     "index.html": "/campers/index.html",
-    "main.7acaea2f.css.map": "/campers/static/css/main.7acaea2f.css.map",
+    "main.10d556f5.css.map": "/campers/static/css/main.10d556f5.css.map",
     "main.07d3183d.js.map": "/campers/static/js/main.07d3183d.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
+    "static/css/main.10d556f5.css",
     "static/js/main.07d3183d.js"
   ]
 }
