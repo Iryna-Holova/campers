@@ -15,9 +15,8 @@ const modalSlice = createSlice({
       state.stack.push(name);
     },
     closeModal(state, { payload }) {
-      const { name } = payload;
-      delete state.modals[name];
-      state.stack = state.stack.filter(modalName => modalName !== name);
+      delete state.modals[payload];
+      state.stack = state.stack.filter(modalName => modalName !== payload);
     },
     closeLastModal(state) {
       const name = state.stack[state.stack.length - 1];

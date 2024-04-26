@@ -14,6 +14,7 @@ import {
 import { CATALOG_LIMIT, TOTAL_CAMPERS } from 'constants/campers';
 import CampersList from 'components/CampersList/CampersList';
 import Filter from 'components/Filter/Filter';
+import CampersModal from 'components/CampersModal/CampersModal';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -59,6 +60,7 @@ const CatalogPage = () => {
           dispatch(getCampersThunk({ page: page + 1, limit: CATALOG_LIMIT }))
         }
       />
+      <CampersModal />
     </div>
   );
 };
