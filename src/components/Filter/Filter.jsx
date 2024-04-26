@@ -10,6 +10,7 @@ import { EQUIPMENT_FILTER, FORMS, ICONS, LOCATIONS } from 'constants/campers';
 import icons from '../../images/sprite.svg';
 import ButtonLink from 'components/ButtonLink/ButtonLink';
 import css from './Filter.module.css';
+import { infoMessage } from 'helpers/toast';
 
 const INITIAL_VALUES = {
   location: '',
@@ -42,16 +43,17 @@ const Filter = ({ onSearch, onReset }) => {
             !values.equipment.length &&
             !values.form
           ) {
-            if (!isFilterActive) return;
+            if (!isFilterActive)
+              return infoMessage('Results already match the filter');
             onReset();
           } else if (
             values.location === (location ?? '') &&
-            values.transmission[0] === transmission &&
+            values.transmission[0] === (transmission || undefined) &&
             values.equipment.length === equipment.length &&
             values.equipment.every(item => equipment.includes(item)) &&
             values.form === form
           ) {
-            return;
+            return infoMessage('Results already match the filter');
           } else {
             onSearch({
               location: values.location || null,
@@ -62,7 +64,9 @@ const Filter = ({ onSearch, onReset }) => {
           }
         }}
         onReset={async () => {
-          if (isFilterActive) await onReset();
+          if (isFilterActive) {
+            await onReset();
+          }
         }}
       >
         {({ values, setFieldValue, resetForm }) => (
