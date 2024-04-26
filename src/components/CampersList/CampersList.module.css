@@ -1,0 +1,31 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 36px;
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    min-width: 888px;
+    row-gap: 50px;
+  }
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+@media screen and (min-width: 1440px) {
+  .list {
+    min-width: 888px;
+    row-gap: 32px;
+  }
+}
+
+.wrapper button {
+  align-self: center;
+}
