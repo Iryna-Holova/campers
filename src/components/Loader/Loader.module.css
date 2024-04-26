@@ -1,0 +1,29 @@
+/* HTML: <div class="loader"></div> */
+.loader {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+@keyframes l5 {
+  0% {
+    box-shadow: 36px 0 var(--color-main-40), -36px 0 #0002;
+    background: var(--color-main-40);
+  }
+  33% {
+    box-shadow: 36px 0 var(--color-main-40), -36px 0 var(--color-main-10);
+    background: var(--color-main-10);
+  }
+  66% {
+    box-shadow: 36px 0 var(--color-main-10), -36px 0 var(--color-main-40);
+    background: var(--color-main-10);
+  }
+  100% {
+    box-shadow: 36px 0 var(--color-main-10), -36px 0 var(--color-main-40);
+    background: var(--color-main-40);
+  }
+}

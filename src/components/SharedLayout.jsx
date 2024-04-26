@@ -8,7 +8,6 @@ import Footer from './Footer/Footer';
 const SharedLayout = () => {
   return (
     <Suspense fallback={<Loader />}>
-      <div id="top" style={{ position: 'absolute', top: 0 }}></div>
       <Header />
       <main>
         <Suspense fallback={<Loader />}>
