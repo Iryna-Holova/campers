@@ -11,6 +11,7 @@ import CampersFeatures from 'components/CampersCommon/CampersFeatures/CampersFea
 import Tabs from './Tabs/Tabs';
 import CampersDetails from './CampersDetails/CampersDetails';
 import CampersReviews from './CampersReviews/CampersReviews';
+import CampersImages from './CampersImages/CampersImages';
 
 const CampersModal = () => {
   const dispatch = useDispatch();
@@ -71,7 +72,7 @@ const CampersModal = () => {
     microwave,
     gas,
     water,
-    // gallery,
+    gallery,
     reviews,
   } = isModal[MODALS.camper]?.data ?? {};
   console.log(name);
@@ -109,7 +110,7 @@ const CampersModal = () => {
             <p className="card-title">{formatPrice(price)}</p>
           </div>
           <div ref={scrollContainerRef} className={css.scroll}>
-            {/* <CamperImages images={gallery} /> */}
+            <CampersImages images={gallery} />
             <p className={css.description}>{description}</p>
             <Tabs
               tabs={CAMPER_MODAL_TABS}
