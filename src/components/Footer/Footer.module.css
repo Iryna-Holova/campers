@@ -64,7 +64,7 @@
 }
 
 .link {
-  cursor: pointer;
+  letter-spacing: inherit;
   transition: color var(--transition);
 }
 

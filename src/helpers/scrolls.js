@@ -4,3 +4,10 @@ export const scrollToTop = () => {
     behavior: 'smooth',
   });
 };
+
+export const scrollToBottom = () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth',
+  });
+};

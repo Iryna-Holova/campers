@@ -1,3 +1,10 @@
+export const PAGES_HEADER = [
+  { page: 'Home', path: '/' },
+  { page: 'Catalog', path: '/catalog' },
+  { page: 'Favorites', path: '/favorites' },
+  { page: 'Contacts', path: null },
+];
+
 export const PAGES_FOOTER = [
   { page: 'About Us', path: '/' },
   { page: 'Catalog', path: '/catalog' },
