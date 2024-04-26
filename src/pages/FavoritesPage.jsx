@@ -1,10 +1,12 @@
+import { useSelector } from 'react-redux';
+import { selectFavorites } from 'store/selectors';
 import CampersList from 'components/CampersList/CampersList';
-import { campers } from 'temp';
 
 const FavoritesPage = () => {
+  const favorites = useSelector(selectFavorites);
   return (
     <div className="container page-container">
-      <CampersList campers={campers} />
+      <CampersList campers={favorites} />
     </div>
   );
 };

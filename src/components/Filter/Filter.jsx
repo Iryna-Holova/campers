@@ -36,8 +36,6 @@ const Filter = ({ onSearch, onReset }) => {
           form,
         }}
         onSubmit={values => {
-          console.log(values);
-          console.log(currentValues);
           if (
             !values.location &&
             !values.transmission.length &&

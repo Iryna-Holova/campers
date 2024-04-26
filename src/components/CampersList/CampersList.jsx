@@ -2,7 +2,12 @@ import CampersCard from 'components/CampersCard/CampersCard';
 import ButtonLink from 'components/ButtonLink/ButtonLink';
 import css from './CampersList.module.css';
 
-const CampersList = ({ campers }) => {
+const CampersList = ({
+  campers,
+  // isLoading = false,
+  isLoadMore = false,
+  onLoadMore = () => {},
+}) => {
   return (
     <div className={css.wrapper}>
       <ul className={css.list}>
@@ -18,17 +23,17 @@ const CampersList = ({ campers }) => {
           </>
         )} */}
       </ul>
-      {/* {isLoadMore && ( */}
-      <ButtonLink
-        type="button"
-        // onClick={onLoadMore}
-        // disabled={isLoading}
-        size="smaller"
-        color="secondary"
-      >
-        Load more
-      </ButtonLink>
-      {/* )} */}
+      {isLoadMore && (
+        <ButtonLink
+          type="button"
+          onClick={onLoadMore}
+          // disabled={isLoading}
+          size="smaller"
+          color="secondary"
+        >
+          Load more
+        </ButtonLink>
+      )}
     </div>
   );
 };

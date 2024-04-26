@@ -1,6 +1,7 @@
 import ButtonLink from 'components/ButtonLink/ButtonLink';
 import icons from './CampersCard.module.css';
 import css from './CampersCard.module.css';
+// import { addFavorite, removeFavorite } from 'store/favorites/slice';
 
 const CampersCard = ({ camper }) => {
   const {
