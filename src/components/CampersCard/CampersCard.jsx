@@ -74,7 +74,10 @@ const CampersCard = ({ camper, isFavorites = false }) => {
             location={location}
             onOpenReviews={() =>
               dispatch(
-                openModal({ name: MODALS.camper, data: camper, activeTab: 1 })
+                openModal({
+                  name: MODALS.camper,
+                  data: { ...camper, modalTab: 1 },
+                })
               )
             }
           />
@@ -96,7 +99,10 @@ const CampersCard = ({ camper, isFavorites = false }) => {
           type="button"
           onClick={() =>
             dispatch(
-              openModal({ name: MODALS.camper, data: camper, activeTab: 0 })
+              openModal({
+                name: MODALS.camper,
+                data: { ...camper, modalTab: 0 },
+              })
             )
           }
           size="small"

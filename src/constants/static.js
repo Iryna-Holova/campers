@@ -21,3 +21,5 @@ export const MODALS = {
   menu: 'MobileMenu',
   camper: 'CamperModal',
 };
+
+export const CAMPER_MODAL_TABS = ['Features', 'Reviews'];
