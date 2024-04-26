@@ -1,17 +1,21 @@
-import ButtonLink from 'components/ButtonLink/ButtonLink';
-import icons from './CampersCard.module.css';
-import css from './CampersCard.module.css';
-import CampersImage from './CampersImage/CampersImage';
+import { useDispatch } from 'react-redux';
+import { addFavorite, removeFavorite } from 'store/favorites/slice';
 import { formatPrice } from 'helpers/format-data';
-// import { addFavorite, removeFavorite } from 'store/favorites/slice';
+import CampersImage from './CampersImage/CampersImage';
+import CamperStats from 'components/CampersCommon/CamperStats/CamperStats';
+import ButtonLink from 'components/ButtonLink/ButtonLink';
+import icons from '../../images/sprite.svg';
+import css from './CampersCard.module.css';
 
-const CampersCard = ({ camper }) => {
+const CampersCard = ({ camper, isFavorites = false }) => {
+  const dispatch = useDispatch();
+
   const {
-    // _id,
+    _id,
     name,
     price,
-    // rating,
-    // location,
+    rating,
+    location,
     // adults,
     // engine,
     // transmission,
@@ -22,7 +26,7 @@ const CampersCard = ({ camper }) => {
     // beds,
     // TV,
     gallery,
-    // reviews,
+    reviews,
     isFavorite = false,
   } = camper;
 
@@ -36,27 +40,37 @@ const CampersCard = ({ camper }) => {
             <p className="card-title">{formatPrice(price)}</p>
             <button
               type="button"
-              // onClick={() =>
-              //   isFavorite
-              //     ? dispatch(removeFavorite(_id))
-              //     : dispatch(addFavorite(camper))
-              // }
-              className={`${css.heart} ${isFavorite ? css.checked : ''}`}
+              onClick={() =>
+                isFavorite
+                  ? dispatch(removeFavorite(_id))
+                  : dispatch(addFavorite(camper))
+              }
+              className={`${css.favotite_btn} ${
+                isFavorite && !isFavorites ? css.checked : ''
+              }`}
             >
-              <svg width={24} height={24}>
-                <use href={icons + '#icon-heart'} />
-              </svg>
-              <svg width={24} height={24} className={css.filled}>
-                <use href={icons + '#icon-heart-filled'} />
-              </svg>
+              {!isFavorites ? (
+                <>
+                  <svg width={24} height={24}>
+                    <use href={icons + '#icon-heart'} />
+                  </svg>{' '}
+                  <svg width={24} height={24} className={css.filled}>
+                    <use href={icons + '#icon-heart-filled'} />
+                  </svg>
+                </>
+              ) : (
+                <svg width={24} height={24}>
+                  <use href={icons + '#icon-close'} />
+                </svg>
+              )}
             </button>
           </div>
-          {/* <CamperStats
+          <CamperStats
             rating={rating}
             reviews={reviews.length}
             location={location}
-            onOpenReviews={handleRatingClick}
-          /> */}
+            // onOpenReviews={handleRatingClick}
+          />
         </div>
         <p className={css.description}>{description}</p>
         {/* <CamperFeatures

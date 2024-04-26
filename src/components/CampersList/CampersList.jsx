@@ -4,6 +4,7 @@ import css from './CampersList.module.css';
 
 const CampersList = ({
   campers,
+  isFavorites,
   // isLoading = false,
   isLoadMore = false,
   onLoadMore = () => {},
@@ -13,7 +14,11 @@ const CampersList = ({
       <h2 className="visually-hidden">Campers</h2>
       <ul className={css.list}>
         {campers.map(camper => (
-          <CampersCard key={camper._id} camper={camper} />
+          <CampersCard
+            key={camper._id}
+            camper={camper}
+            isFavorites={isFavorites}
+          />
         ))}
         {/* {isLoading && (
           <>

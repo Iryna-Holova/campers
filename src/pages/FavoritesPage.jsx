@@ -6,7 +6,7 @@ const FavoritesPage = () => {
   const favorites = useSelector(selectFavorites);
   return (
     <div className="container page-container">
-      <CampersList campers={favorites} />
+      <CampersList campers={favorites} isFavorites={true} />
     </div>
   );
 };

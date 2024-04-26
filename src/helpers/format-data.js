@@ -7,3 +7,7 @@ export const formatPrice = price => {
     useGrouping: false,
   });
 };
+
+export const formatLocation = location => {
+  return location.split(', ').reverse().join(', ');
+};
