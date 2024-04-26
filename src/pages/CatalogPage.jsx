@@ -4,6 +4,7 @@ import { getCampersThunk, getFilteredThunk } from 'store/campers/thunks';
 import { clearFilter, setFilter } from 'store/filter/slice';
 import {
   selectCampersShown,
+  selectError,
   selectFilterValues,
   selectIsFilterActive,
   selectIsLoadMore,
@@ -26,7 +27,7 @@ const CatalogPage = () => {
   const isLoaded = useSelector(selectIsLoaded);
   const isFilterActive = useSelector(selectIsFilterActive);
   const filterValues = useSelector(selectFilterValues);
-  // const error = useSelector(selectError);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     scrollToTop();
@@ -44,21 +45,32 @@ const CatalogPage = () => {
   }, [dispatch, filterValues, isFilterActive, isLoaded]);
 
   const handleSearch = async values => {
-    await dispatch(
-      getFilteredThunk({ page: 1, limit: TOTAL_CAMPERS, ...values })
-    ).unwrap();
-    dispatch(setFilter(values));
+    try {
+      await dispatch(
+        getFilteredThunk({ page: 1, limit: TOTAL_CAMPERS, ...values })
+      ).unwrap();
+    } catch (_) {
+    } finally {
+      dispatch(setFilter(values));
+    }
   };
 
   const handleResetSearch = async () => {
-    await dispatch(getCampersThunk({ page: 1, limit: CATALOG_LIMIT })).unwrap();
-    dispatch(clearFilter());
+    try {
+      await dispatch(
+        getCampersThunk({ page: 1, limit: CATALOG_LIMIT })
+      ).unwrap();
+    } catch (_) {
+    } finally {
+      dispatch(clearFilter());
+    }
   };
   return (
     <div className="container page-container">
       <Filter onSearch={handleSearch} onReset={handleResetSearch} />
       <CampersList
         campers={campers}
+        empty={error !== null}
         isLoading={isLoading}
         isLoadMore={isLoadMore}
         onLoadMore={() =>

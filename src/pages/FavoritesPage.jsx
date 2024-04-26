@@ -13,7 +13,11 @@ const FavoritesPage = () => {
   const favorites = useSelector(selectFavorites);
   return (
     <div className="container page-container">
-      <CampersList campers={favorites} isFavorites={true} />
+      <CampersList
+        campers={favorites}
+        isFavorites={true}
+        empty={favorites.length === 0}
+      />
       <CampersModal />
     </div>
   );

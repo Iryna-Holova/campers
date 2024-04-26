@@ -1,10 +1,12 @@
 import CampersCard from 'components/CampersCard/CampersCard';
 import ButtonLink from 'components/ButtonLink/ButtonLink';
 import CampersSkeleton from 'components/CampersCard/CampersSkeleton/CampersSkeleton';
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import css from './CampersList.module.css';
 
 const CampersList = ({
   campers,
+  empty,
   isFavorites,
   isLoading = false,
   isLoadMore = false,
@@ -40,6 +42,13 @@ const CampersList = ({
         >
           Load more
         </ButtonLink>
+      )}
+      {empty && (
+        <ErrorMessage
+          message={
+            isFavorites ? 'Add your favorite campers here' : 'Nothing found...'
+          }
+        />
       )}
     </div>
   );
