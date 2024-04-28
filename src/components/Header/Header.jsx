@@ -33,7 +33,6 @@ const Header = () => {
       </button>
       <nav
         id="navigation-menu"
-        aria-hidden={isOpen ? 'false' : 'true'}
         className={`
         ${css.menu}
         ${isOpen ? css.open : ''}
@@ -65,7 +64,6 @@ const Header = () => {
           ))}
         </ul>
       </nav>
-      {/* {isOpen && <Modal onClose={handleCloseMenu} />} */}
     </header>
   );
 };
