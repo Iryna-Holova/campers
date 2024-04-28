@@ -18,6 +18,7 @@ const CampersImage = ({ images }) => {
       <button
         type="button"
         onClick={handleImageIncrement}
+        aria-label="Next Image"
         className={`${css.chevron} ${css.right}`}
       >
         <svg width={48} height={48}>
@@ -26,6 +27,7 @@ const CampersImage = ({ images }) => {
       </button>
       <button
         type="button"
+        aria-label="Previous Image"
         onClick={handleImageDecrement}
         className={css.chevron}
       >
@@ -40,9 +42,11 @@ const CampersImage = ({ images }) => {
             type="button"
             onClick={() => setActiveIdx(index)}
             disabled={index === activeIdx}
+            aria-disabled={index === activeIdx}
+            aria-label={`Image ${index + 1}`}
             className={css.dot_button}
           >
-            <span></span>
+            <span aria-hidden="true"></span>
           </button>
         ))}
       </div>

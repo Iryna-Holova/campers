@@ -19,9 +19,21 @@ export const PAGES_FOOTER = [
 ];
 
 export const SOCIAL_LINKS = [
-  { link: 'https://www.instagram.com/', icon: '#icon-instagram' },
-  { link: 'https://www.facebook.com/', icon: '#icon-facebook' },
-  { link: 'https://www.youtube.com/', icon: '#icon-youtube' },
+  {
+    name: 'Instagram',
+    link: 'https://www.instagram.com/',
+    icon: '#icon-instagram',
+  },
+  {
+    name: 'Facebook',
+    link: 'https://www.facebook.com/',
+    icon: '#icon-facebook',
+  },
+  {
+    name: 'Youtube',
+    link: 'https://www.youtube.com/',
+    icon: '#icon-youtube',
+  },
 ];
 
 export const MODALS = {

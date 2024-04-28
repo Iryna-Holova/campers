@@ -23,12 +23,17 @@ const Header = () => {
         ${css.burger}
         ${isOpen ? css.open : ''}
       `}
+        aria-label="Toggle navigation"
+        aria-expanded={isOpen ? 'true' : 'false'}
+        aria-controls="navigation-menu"
       >
         <span></span>
         <span></span>
         <span></span>
       </button>
       <nav
+        id="navigation-menu"
+        aria-hidden={isOpen ? 'false' : 'true'}
         className={`
         ${css.menu}
         ${isOpen ? css.open : ''}
@@ -41,6 +46,7 @@ const Header = () => {
                 <NavLink
                   to={path}
                   onClick={handleCloseMenu}
+                  aria-label={page}
                   className={css.link}
                 >
                   {page}
@@ -49,6 +55,7 @@ const Header = () => {
                 <button
                   type="button"
                   onClick={scrollToBottom}
+                  aria-label={page}
                   className={css.link}
                 >
                   {page}

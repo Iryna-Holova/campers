@@ -48,6 +48,10 @@ const CampersCard = ({ camper, isFavorites = false }) => {
                   ? dispatch(removeFavorite(_id))
                   : dispatch(addFavorite(camper))
               }
+              aria-label={
+                isFavorite ? 'Remove from favorites' : 'Add to favorites'
+              }
+              aria-pressed={isFavorite}
               className={`${css.favotite_btn} ${
                 isFavorite && !isFavorites ? css.checked : ''
               }`}

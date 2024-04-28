@@ -51,12 +51,13 @@ const Footer = () => {
             ))}
           </ul>
           <ul className={css.social_list}>
-            {SOCIAL_LINKS.map(({ link, icon }, idx) => (
+            {SOCIAL_LINKS.map(({ name, link, icon }, idx) => (
               <li key={idx}>
                 <a
                   href={link}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={name}
                   className={css.social_link}
                 >
                   <svg width={24} height={24} className={css.icon}>
@@ -78,6 +79,7 @@ const Footer = () => {
           href="https://github.com/Iryna-Holova"
           target="_blanc"
           rel="noreferrer"
+          aria-label="Github profile"
           className={css.github_link}
         >
           <svg width={24} height={24}>
