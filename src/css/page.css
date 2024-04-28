@@ -48,5 +48,11 @@ body {
 }
 
 main {
-  flex-grow: 1;
+  min-height: calc(100vh - 125px);
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    min-height: calc(100vh - 208px);
+  }
 }
