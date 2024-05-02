@@ -77,7 +77,7 @@ const Footer = () => {
         <span>by</span>
         <a
           href="https://github.com/Iryna-Holova"
-          target="_blanc"
+          target="_blank"
           rel="noreferrer"
           aria-label="Github profile"
           className={css.github_link}
